@@ -9,17 +9,17 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   h1: {
+    fontFamily: 'Roboto',
     fontSize: 14,
     color: 'white'
   }
 })
 
 
-const Card = memo(({ title, onPress, horizontal, color }) => {
+const Card = memo(({ title, horizontal, color }) => {
   const { container, h1 } = styles
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View
+   <View
         style={[
           container,
           { marginHorizontal: horizontal },
@@ -28,7 +28,6 @@ const Card = memo(({ title, onPress, horizontal, color }) => {
       >
         <Text style={h1}>{title}</Text>
       </View>
-    </TouchableOpacity>
   )
 })
 
