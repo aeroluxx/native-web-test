@@ -1,0 +1,81 @@
+import React, { memo, useEffect, useState } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { Font } from 'expo'
+import { Device } from './constants'
+
+const styles = StyleSheet.create({
+  container: {
+    ...Device.select({
+      iphone5: {
+        width: '100%'
+      },
+      mi5: {
+        width: '100%'
+      },
+      iphone678: {
+        width: '100%'
+      },
+      googlePixel: {
+        width: '100%'
+      },
+      redmiNote5: {
+        width: '100%'
+      },
+      web: {
+        width: '48%'
+      }
+    }),
+    justifyContent: 'center',
+    alignItems: 'center'
+    //backgroundColor: '#2C3454',
+    // paddingHorizontal: 15
+  },
+  h1: {
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'flex-start'
+  },
+  chartStyle: {
+    ...Device.select({
+      iphone5: {
+        height: '40%'
+      },
+      mi5: {
+        height: '40%'
+      },
+      iphone678: {
+        height: '40%'
+      },
+      googlePixel: {
+        height: '40%'
+      },
+      redmiNote5: {
+        height: '40%'
+      },
+      web: {
+        height: 220
+      }
+    }),
+    width: '100%',
+    borderWidth: 1,
+    borderColor: 'white'
+  }
+})
+
+const Perfomance = memo(() => {
+  const [fontLoaded, setFontLoaded] = useState(false)
+  useEffect(() => {
+    Font.loadAsync({
+      'roboto-medium': require('../assets/fonts/Roboto-Medium.ttf')
+    }).then(() => setFontLoaded(true))
+  }, [])
+  const { container, h1, chartStyle } = styles
+  return fontLoaded ? (
+    <View style={container}>
+      <Text style={[h1, { fontFamily: 'roboto-medium' }]}>Perfomance</Text>
+      <View style={chartStyle} />
+    </View>
+  ) : null
+})
+
+export { Perfomance }
