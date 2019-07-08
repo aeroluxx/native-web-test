@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Font } from 'expo'
-import { Device } from './constants'
+import { Device } from '../constants'
 import { Card } from '../components/Card'
 
 const styles = StyleSheet.create({

@@ -1,9 +1,13 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Balance, Perfomance } from './screens'
+import { StyleSheet, ScrollView, View } from 'react-native'
+import { Balance, Perfomance, Robots } from './screens'
 
 const styles = StyleSheet.create({
+  containerScroll: {
+    backgroundColor: '#242B4A'
+  },
   container: {
+    paddingTop: 35,
     flex: 1,
     backgroundColor: '#242B4A',
     alignItems: 'center',
@@ -15,11 +19,15 @@ const styles = StyleSheet.create({
 })
 
 export default function App() {
-  const { container } = styles
+  const { container, containerScroll } = styles
   return (
-    <View style={container}>
-      <Balance />
-      <Perfomance />
-    </View>
+    <ScrollView style={containerScroll}>
+      <View style={container}>
+        <Balance />
+        <Perfomance />
+      </View>
+      <Robots />
+      <View style={{ height: 500 }} />
+    </ScrollView>
   )
 }

@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Font } from 'expo'
-import { Device } from './constants'
+import { Device } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
     //backgroundColor: '#2C3454',
-    // paddingHorizontal: 15
+    //paddingHorizontal: 15
   },
   h1: {
     fontSize: 18,
@@ -38,22 +38,22 @@ const styles = StyleSheet.create({
   chartStyle: {
     ...Device.select({
       iphone5: {
-        height: '40%'
+        height: 200
       },
       mi5: {
-        height: '40%'
+        height: 200
       },
       iphone678: {
-        height: '40%'
+        height: 200
       },
       googlePixel: {
-        height: '40%'
+        height: 200
       },
       redmiNote5: {
-        height: '40%'
+        height: 200
       },
       web: {
-        height: 220
+        height: 230
       }
     }),
     width: '100%',

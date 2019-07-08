@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Font } from 'expo'
-import { Device } from './constants'
+import { Device } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   logoStyle: {
-    backgroundColor: 'gold',
+    backgroundColor: '#27A2F8',
     borderRadius: 20,
     width: 40,
     height: 40
