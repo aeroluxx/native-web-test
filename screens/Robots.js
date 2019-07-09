@@ -1,10 +1,11 @@
 import React, { memo, useEffect, useState } from 'react'
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { Font } from 'expo'
 import { CardRobot } from '../components'
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'flex-start',
     marginHorizontal: 25,
@@ -28,13 +29,10 @@ const Robots = memo(() => {
   return fontLoaded ? (
     <View style={container}>
       <Text style={[h1, { fontFamily: 'roboto-medium' }]}>Robots</Text>
-      <ScrollView horizontal>
-        <CardRobot title="Robot1" price="456453.0788 BTC" />
-        <CardRobot title="Robot2" price="678453.0788 ETH" />
-        <CardRobot title="Robot3" price="1233.0788 LTC" />
-        <CardRobot title="Robot4" price="23.0788 USD" />
-        <CardRobot title="Robot5" price="0.000788 XRP" />
-      </ScrollView>
+      <CardRobot title="Robot1" price="456453.0788 BTC" />
+      <CardRobot title="Robot2" price="456453.0788 BTC" />
+      <CardRobot title="Robot3" price="456453.0788 BTC" />
+      <CardRobot title="Robot4" price="456453.0788 BTC" />
     </View>
   ) : null
 })
