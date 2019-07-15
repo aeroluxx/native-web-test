@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Font } from 'expo'
 import { Device } from '../constants'
+import { Chart } from '../components/Chart/Chart'
 
 const styles = StyleSheet.create({
   container: {
@@ -73,7 +74,9 @@ const Perfomance = memo(() => {
   return fontLoaded ? (
     <View style={container}>
       <Text style={[h1, { fontFamily: 'roboto-medium' }]}>Perfomance</Text>
-      <View style={chartStyle} />
+      <View style={chartStyle}>
+        <Chart />
+      </View>
     </View>
   ) : null
 })

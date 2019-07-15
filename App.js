@@ -1,18 +1,33 @@
-import React, { Component } from 'react'
-import { View } from 'react-native'
-import { VictoryAxis, VictoryChart, VictoryTheme, VictoryCandlestick } from 'victory-native'
-import { DATA } from './DATA'
+import React from 'react'
+import { StyleSheet, ScrollView, View } from 'react-native'
+import { Balance, Perfomance, Robots } from './screens'
 
-export default class PieChart extends Component {
-  render() {
-    return (
-      <View style={{ backgroundColor: 'light-grey', flex: 1 }}>
-        <VictoryChart theme={VictoryTheme.material} domainPadding={{ x: 25 }} scale={{ x: 'time' }}>
-          <VictoryAxis tickFormat={t => `${t.getDate()}/${t.getMonth()}`} />
-          <VictoryAxis dependentAxis />
-          <VictoryCandlestick candleColors={{ positive: 'green', negative: 'red' }} data={DATA} />
-        </VictoryChart>
-      </View>
-    )
+const styles = StyleSheet.create({
+  containerScroll: {
+    backgroundColor: '#242B4A'
+  },
+  container: {
+    paddingTop: 35,
+    flex: 1,
+    backgroundColor: '#242B4A',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: 25
   }
+})
+
+export default function App() {
+  const { container, containerScroll } = styles
+  return (
+    <ScrollView style={containerScroll}>
+      <View style={container}>
+        <Balance />
+        <Perfomance />
+      </View>
+      <Robots />
+      <View style={{ height: 500 }} />
+    </ScrollView>
+  )
 }
