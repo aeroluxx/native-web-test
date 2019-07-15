@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
-import { VictoryAxis, VictoryChart, VictoryTheme, VictoryCandlestick } from 'victory-native'
-import { DATA } from './DATA'
+import { VictoryAxis, VictoryChart, VictoryTheme, VictoryCandlestick } from 'victory'
+import { DATA } from '../DATA'
 
 export default class PieChart extends Component {
   render() {
