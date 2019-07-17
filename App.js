@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, ScrollView, View } from 'react-native'
-import { Balance, Perfomance, Robots } from './screens'
+//import { Balance, Perfomance, Robots } from './screens'
+import TestChart from './components/TestChart/TestChart'
 
 const styles = StyleSheet.create({
   containerScroll: {
@@ -21,13 +22,14 @@ const styles = StyleSheet.create({
 export default function App() {
   const { container, containerScroll } = styles
   return (
-    <ScrollView style={containerScroll}>
-      <View style={container}>
-        <Balance />
-        <Perfomance />
-      </View>
-      <Robots />
-      <View style={{ height: 500 }} />
-    </ScrollView>
+    <TestChart />
+    // <ScrollView style={containerScroll}>
+    //   <View style={container}>
+    //     <Balance />
+    //     <Perfomance />
+    //   </View>
+    //   <Robots />
+    //   <View style={{ height: 500 }} />
+    // </ScrollView>
   )
 }
