@@ -4,7 +4,7 @@ import { VictoryAxis, VictoryChart, VictoryTheme, VictoryCandlestick } from 'vic
 import { DATA } from '../../DATA'
 
 const Chart = () => (
-  <View style={{ backgroundColor: 'light-grey', flex: 1 }}>
+  <View style={{ flex: 1 }}>
     <VictoryChart domainPadding={{ x: 25 }} scale={{ x: 'time' }}>
       <VictoryAxis tickFormat={t => `${t.getDate()}/${t.getMonth()}`} />
       <VictoryAxis dependentAxis />

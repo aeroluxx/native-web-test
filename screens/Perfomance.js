@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
       }
     }),
     width: '100%',
-    borderWidth: 1,
+    borderWidth: 0,
     borderColor: 'white'
   }
 })
