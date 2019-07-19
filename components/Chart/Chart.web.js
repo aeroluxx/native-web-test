@@ -1,18 +1,19 @@
 import React from 'react'
 import { View } from 'react-native'
-import { VictoryAxis, VictoryChart, VictoryCandlestick } from 'victory'
+import { VictoryAxis, VictoryChart, VictoryCandlestick, VictoryLine } from 'victory'
 import { DATA } from '../../DATA'
 
 const Chart = () => (
   <View style={{ flex: 1 }}>
     <VictoryChart
       scale={{ x: 'time' }}
-      height={230}
+      height={220}
       //width={900}
       //maxDomain={{ y: 25 }}
+      padding={{ top: 30, bottom: 40, left: 30, right: 40 }}
       //padding={{ top: 30, bottom: 10, left: 10, right: 20 }}
       //margin={{ top: -100, bottom: 0, left: 0, right: 0 }}
-      domainPadding={{ x: 15, y: 15 }}
+      domainPadding={{ x: 15, y: 5 }}
     >
       <VictoryAxis
         style={{
@@ -25,8 +26,8 @@ const Chart = () => (
       <VictoryAxis
         style={{
           axis: { stroke: 'white' },
-          ticks: { fill: 'transparent' },
-          tickLabels: { fill: 'transparent' }
+          ticks: { fill: 'white' },
+          tickLabels: { fill: 'white' }
         }}
         dependentAxis
       />

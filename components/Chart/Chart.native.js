@@ -1,14 +1,60 @@
 import React from 'react'
 import { View } from 'react-native'
-import { VictoryAxis, VictoryChart, VictoryTheme, VictoryCandlestick } from 'victory-native'
+import { VictoryAxis, VictoryChart, VictoryCandlestick } from 'victory-native'
 import { DATA } from '../../DATA'
 
 const Chart = () => (
   <View style={{ flex: 1 }}>
-    <VictoryChart domainPadding={{ x: 25 }} scale={{ x: 'time' }}>
-      <VictoryAxis tickFormat={t => `${t.getDate()}/${t.getMonth()}`} />
-      <VictoryAxis dependentAxis />
-      <VictoryCandlestick candleColors={{ positive: 'green', negative: 'red' }} data={DATA} />
+    <VictoryChart
+      scale={{ x: 'time' }}
+      height={220}
+      //width={900}
+      //maxDomain={{ y: 25 }}
+      padding={{ top: 30, bottom: 40, left: 30, right: 80 }}
+      //margin={{ top: 0, bottom: 0, left: 0, right: 25 }}
+      domainPadding={{ x: 15, y: 5 }}
+    >
+      <VictoryAxis
+        style={{
+          axis: { stroke: 'white' },
+          ticks: { fill: 'white' },
+          tickLabels: { fill: 'white' }
+        }}
+        fixLabelOverlap
+      />
+      <VictoryAxis
+        style={{
+          axis: { stroke: 'white' },
+          ticks: { fill: 'white' },
+          tickLabels: { fill: 'white' }
+        }}
+        dependentAxis
+      />
+      <VictoryCandlestick
+        candleColors={{ positive: 'green', negative: 'red' }}
+        candleRatio={0.6}
+        //candleWidth={8}
+        //domain={{ x: [0, 10], y: [0, 1] }}
+        //domainPadding={{ x: [20, -20], y: 15 }}
+        height={250}
+        data={DATA}
+        //labels={d => `open: ${d.open}`}
+        padding={{ top: 0, bottom: 0, left: 5, right: 5 }}
+        scale={{ x: 'linear', y: 'linear' }}
+        style={{
+          data: {
+            //     fillOpacity: 0.7
+            //   },
+            stroke: 'white',
+            strokeWidth: 0.2
+            // labels: {
+            //   fontSize: 6,
+            //   fill: 'white'
+            // }
+          }
+        }}
+        wickStrokeWidth={1}
+      />
     </VictoryChart>
   </View>
 )
